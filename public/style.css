@@ -554,10 +554,7 @@ video {
   display: none;
 }
 
-.h-10 {
-  height: 2.5rem;
-}
-
-.font-extrabold {
-  font-weight: 800;
+.bg-main-1 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(228 230 217 / var(--tw-bg-opacity, 1));
 }
