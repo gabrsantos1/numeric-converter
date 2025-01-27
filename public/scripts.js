@@ -1,16 +1,17 @@
+/*
 function decToRoman(quant){
     if(isNaN(quant)){
         return "Insira um número válido.";
     }
 
     const decNumber = {
-        1000: M,
-        500: D,
-        100: C,
-        50: G,
-        10: X,
-        5: V,
-        1: I,
+        1000: "M",
+        500: "D",
+        100: "C",
+        50: "G",
+        10: "X",
+        5: "V",
+        1: "I",
     };
 
     let result = "";
@@ -23,13 +24,16 @@ function decToRoman(quant){
 console.log(decToRoman(9)); // IX
 console.log(decToRoman(4)); // IV
 console.log(decToRoman(8)); // VIII
+*/
 
 //percorrer o numero romano da esquerda pra direita, somando os simbolos.
 //se um simbolo da esquerda tiver o valor menor que o da direita
 //subtrair e pular o numero, depois continuar seguindo a regra.
 
-function romanToDecimals(quant) {
-    
+function romanToDecimals() {
+    const quanti = document.getElementById('quanti');
+    const convButton = document.getElementById('convButton');
+
     const romanNumbers = {
         I: 1,
         V: 5,
@@ -40,6 +44,7 @@ function romanToDecimals(quant) {
         M: 1000,
     }
 
+    const quant = quanti.value.toUpperCase();
     let result = 0;
 
     for (let i = 0; i < quant.length; i++){
@@ -54,7 +59,7 @@ function romanToDecimals(quant) {
         }
     }
 
-    return result;
+    convButton.textContent = 'Decimal:' + result;
 
 }
 
