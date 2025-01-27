@@ -61,6 +61,9 @@ function romanToDecimals() {
 
     convButton.textContent = 'Decimal:' + result;
 
+    if(isNaN(result)){
+        alert("Insira um algarismo romano válido.");
+    }
 }
 
 
@@ -69,4 +72,7 @@ console.log(romanToDecimals("IV")); // 4
 console.log(romanToDecimals("XIV")); // 14
 console.log(romanToDecimals("MCMXCIV")); //1994
 
-
+//se conseguir implementar dec to roman criar uma funcao geral
+//com um if para duas functions (romanToDecimal - decToRoman),
+//caso o input seja numero decimal seguir pra function dec,
+//caso seja roman seguir pra function roman
