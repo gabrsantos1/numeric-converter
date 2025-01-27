@@ -1,30 +1,27 @@
-/*
 function decToRoman(quant){
+    
+    const quanti = document.getElementById('quanti');
+    const convButton = document.getElementById('convButton');
+    
+    const decNumber = [1, 5, 10, 50, 100, 500, 1000]
+    const romSymbol = ["I", "V", "X", "G", "C", "D", "M"]
+    
+    let result = "";
+    
+    
+    return result;
+    
     if(isNaN(quant)){
         return "Insira um número válido.";
     }
-
-    const decNumber = {
-        1000: "M",
-        500: "D",
-        100: "C",
-        50: "G",
-        10: "X",
-        5: "V",
-        1: "I",
-    };
-
-    let result = "";
-
-    return result;
-
+    
 }
 
 
 console.log(decToRoman(9)); // IX
 console.log(decToRoman(4)); // IV
 console.log(decToRoman(8)); // VIII
-*/
+
 
 //percorrer o numero romano da esquerda pra direita, somando os simbolos.
 //se um simbolo da esquerda tiver o valor menor que o da direita
