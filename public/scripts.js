@@ -14,9 +14,9 @@ function decToRoman(quanti){
         }
     }
 
-    convButton.textContent = "Romano:" + result;
+    convButton.textContent = "Romano: " + result;
     
-    if(isNaN(result)){
+    if(!isNaN(result)){
         alert("Insira um número válido.");
     }
     
@@ -24,9 +24,9 @@ function decToRoman(quanti){
 }
 
 console.log(decToRoman(9)); // IX
+console.log(decToRoman(1994)); // MCMXCIV
 console.log(decToRoman(4)); // IV
 console.log(decToRoman(8)); // VIII
-console.log(decToRoman(1994)); // MCMXCIV
 
 
 //percorrer o numero romano da esquerda pra direita, somando os simbolos.
@@ -62,7 +62,7 @@ function romanToDecimals() {
         }
     }
 
-    convButton.textContent = "Decimal:" + result;
+    convButton.textContent = "Decimal: " + result;
 
     if(isNaN(result)){
         alert("Insira um algarismo romano válido.");
