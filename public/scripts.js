@@ -1,26 +1,32 @@
-function decToRoman(quant){
-    
-    const quanti = document.getElementById('quanti');
+function decToRoman(quanti){
+    //const quanti = document.getElementById('quantiD');
     const convButton = document.getElementById('convButton');
     
-    const decNumber = [1, 5, 10, 50, 100, 500, 1000]
-    const romSymbol = ["I", "V", "X", "G", "C", "D", "M"]
+    const decNumber = [1000, 500, 100, 50, 10, 5, 1];
+    const romSymbol = ["M", "D", "C", "G", "X", "V", "I"];
     
     let result = "";
     
+    for(let i = 0; i < decNumber.length; i++){
+        while(quanti >= decNumber[i]){
+            result += romSymbol[i];
+            quanti -= decNumber[i];
+        }
+    }
+
+    convButton.textContent = "Romano:" + result;
     
-    return result;
-    
-    if(isNaN(quant)){
-        return "Insira um número válido.";
+    if(isNaN(result)){
+        alert("Insira um número válido.");
     }
     
+    return result;
 }
-
 
 console.log(decToRoman(9)); // IX
 console.log(decToRoman(4)); // IV
 console.log(decToRoman(8)); // VIII
+console.log(decToRoman(1994)); // MCMXCIV
 
 
 //percorrer o numero romano da esquerda pra direita, somando os simbolos.
@@ -28,7 +34,7 @@ console.log(decToRoman(8)); // VIII
 //subtrair e pular o numero, depois continuar seguindo a regra.
 
 function romanToDecimals() {
-    const quanti = document.getElementById('quanti');
+    const quanti = document.getElementById('quantiR');
     const convButton = document.getElementById('convButton');
 
     const romanNumbers = {
@@ -56,18 +62,12 @@ function romanToDecimals() {
         }
     }
 
-    convButton.textContent = 'Decimal:' + result;
+    convButton.textContent = "Decimal:" + result;
 
     if(isNaN(result)){
         alert("Insira um algarismo romano válido.");
     }
 }
-
-
-console.log(romanToDecimals("IX")); // 9
-console.log(romanToDecimals("IV")); // 4
-console.log(romanToDecimals("XIV")); // 14
-console.log(romanToDecimals("MCMXCIV")); //1994
 
 //se conseguir implementar dec to roman criar uma funcao geral
 //com um if para duas functions (romanToDecimal - decToRoman),
