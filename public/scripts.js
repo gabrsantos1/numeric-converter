@@ -17,7 +17,7 @@ function decToRoman(quanti){
     convButton.textContent = "Romano: " + result;
     
     if(!isNaN(result)){
-        alert("Insira um número válido.");
+        alert("Insira um número decimal válido.");
     }
     
     return result;
@@ -73,3 +73,13 @@ function romanToDecimals() {
 //com um if para duas functions (romanToDecimal - decToRoman),
 //caso o input seja numero decimal seguir pra function dec,
 //caso seja roman seguir pra function roman
+
+function chooseConversion(){
+
+    if(isNaN(quantiD)){
+        decToRoman();
+    } else {
+        romanToDecimals();
+    }
+
+}
