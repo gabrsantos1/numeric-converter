@@ -24,10 +24,6 @@ function decToRoman(){
     
 }
 
-//percorrer o numero romano da esquerda pra direita, somando os simbolos.
-//se um simbolo da esquerda tiver o valor menor que o da direita
-//subtrair e pular o numero, depois continuar seguindo a regra.
-
 function romanToDecimals() {
     const quanti = document.getElementById('quantiR');
     const convButton = document.getElementById('convButton');
@@ -64,11 +60,6 @@ function romanToDecimals() {
     }
 }
 
-//se conseguir implementar dec to roman criar uma funcao geral
-//com um if para duas functions (romanToDecimal - decToRoman),
-//caso o input seja numero decimal seguir pra function dec,
-//caso seja roman seguir pra function roman
-
 function chooseConversion(){
 
     const quantiD = document.getElementById('quantiD');
@@ -76,8 +67,10 @@ function chooseConversion(){
     const decValue = quantiD.value;
     const romValue = quantiR.value;
 
-    if(isNaN(romValue) && romValue !== ""){
-        romanToDecimals();
+    if(romValue !== "" && decValue !== ""){
+        alert("Preencha apenas um dos tipos de conversão.");
+    } else if(isNaN(romValue) && romValue !== ""){
+    romanToDecimals();
     }else if(!isNaN(decValue) && decValue !== ""){
         decToRoman();
     }
