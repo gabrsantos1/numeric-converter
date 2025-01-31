@@ -1,33 +1,28 @@
-function decToRoman(quanti){
-    //const quanti = document.getElementById('quantiD');
+function decToRoman(){
+    const quanti = document.getElementById('quantiD');
     const convButton = document.getElementById('convButton');
     
-    const decNumber = [1000, 500, 100, 50, 10, 5, 1];
-    const romSymbol = ["M", "D", "C", "G", "X", "V", "I"];
+    const decNumber = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+    const romSymbol = ["M","CM", "D", "CD", "C", "XC", "G", "XG", "X", "IX", "V", "IV", "I"];
     
+    let quante = parseInt(quanti.value);
     let result = "";
     
+    
     for(let i = 0; i < decNumber.length; i++){
-        while(quanti >= decNumber[i]){
+        while(quante >= decNumber[i]){
             result += romSymbol[i];
-            quanti -= decNumber[i];
+            quante -= decNumber[i];
         }
     }
-
-    convButton.textContent = "Romano: " + result;
     
     if(!isNaN(result)){
         alert("Insira um número decimal válido.");
     }
+
+    convButton.textContent = "Romano: " + result;
     
-    return result;
 }
-
-console.log(decToRoman(9)); // IX
-console.log(decToRoman(1994)); // MCMXCIV
-console.log(decToRoman(4)); // IV
-console.log(decToRoman(8)); // VIII
-
 
 //percorrer o numero romano da esquerda pra direita, somando os simbolos.
 //se um simbolo da esquerda tiver o valor menor que o da direita
@@ -76,10 +71,15 @@ function romanToDecimals() {
 
 function chooseConversion(){
 
-    if(isNaN(quantiD)){
-        decToRoman();
-    } else {
+    const quantiD = document.getElementById('quantiD');
+    const quantiR = document.getElementById('quantiR');
+    const decValue = quantiD.value;
+    const romValue = quantiR.value;
+
+    if(isNaN(romValue) && romValue !== ""){
         romanToDecimals();
+    }else if(!isNaN(decValue) && decValue !== ""){
+        decToRoman();
     }
 
 }
