@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Press+Start+2P&family=Quicksand:wght@300..700&family=Varela+Round&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="/img/ico.jpg" />
+</head>
+<body class="bg-main-1 font-varela">
+    <header></header>
+    
+    <h1 class="flex justify-center pt-20 text-main-5 text-5xl">Conversor Numérico</h1>
+    <main class="flex justify-center pt-56">
+        <section class="shadow-2xl flex justify-center h-96 w-1/2 bg-gradient-to-l from-main-3 to-main-2 rounded-3xl border-2 border-main-4">
+            <div>
+                <input id="quantiR" type="text" placeholder="Romano aqui" class="hover:border-2 border-main-5 shadow-lg text-center h-10 w-32 rounded-3xl flex m-16">
+                <button onclick="chooseConversion()" class="duration-300 shadow-xl bg-main-3 hover:bg-main-4 hover:text-main-1 rounded-3xl h-10 w-32 flex m-16 items-center justify-center">Converter</button>
+                <input id="quantiD" type="number" placeholder="Decimal aqui" class="hover:border-2 border-main-5 shadow-lg text-center h-10 w-32 rounded-3xl flex m-16">
+            </div>
+            <div class="flex justify-center h-96 w-1/2 mt-40">
+                <p class="border-2 border-main-4 shadow-lg bg-white rounded-3xl mt-3 flex items-center justify-center h-10 w-52" id="convButton">Resultado:</p>
+            </div>
+        </section>
+    </main>
+        
+    <footer></footer>
+    <script src="./scripts.js"></script>
+</body>
+</html>
